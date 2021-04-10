@@ -1,0 +1,10 @@
+C:\Users\kolts\Desktop\Проги для собеса\ItsMyProject\ItsMyProject\bin\Debug\ItsMyProject.exe.config
+C:\Users\kolts\Desktop\Проги для собеса\ItsMyProject\ItsMyProject\bin\Debug\ItsMyProject.exe
+C:\Users\kolts\Desktop\Проги для собеса\ItsMyProject\ItsMyProject\bin\Debug\ItsMyProject.pdb
+C:\Users\kolts\Desktop\Проги для собеса\ItsMyProject\ItsMyProject\obj\Debug\ItsMyProject.csprojAssemblyReference.cache
+C:\Users\kolts\Desktop\Проги для собеса\ItsMyProject\ItsMyProject\obj\Debug\ItsMyProject.Form1.resources
+C:\Users\kolts\Desktop\Проги для собеса\ItsMyProject\ItsMyProject\obj\Debug\ItsMyProject.Properties.Resources.resources
+C:\Users\kolts\Desktop\Проги для собеса\ItsMyProject\ItsMyProject\obj\Debug\ItsMyProject.csproj.GenerateResource.cache
+C:\Users\kolts\Desktop\Проги для собеса\ItsMyProject\ItsMyProject\obj\Debug\ItsMyProject.csproj.CoreCompileInputs.cache
+C:\Users\kolts\Desktop\Проги для собеса\ItsMyProject\ItsMyProject\obj\Debug\ItsMyProject.exe
+C:\Users\kolts\Desktop\Проги для собеса\ItsMyProject\ItsMyProject\obj\Debug\ItsMyProject.pdb
