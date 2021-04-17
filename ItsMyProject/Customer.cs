@@ -11,7 +11,6 @@ namespace ItsMyProject
         public string Name { get; private set; }
         public double Balance { get; private set; }
         public double Spent { get; private set; }
-        //public string Name { get; private set; }
 
         public Customer(string name, double balance, double spent)
         {
@@ -20,7 +19,7 @@ namespace ItsMyProject
             Spent = spent;
         }
 
-        public void ActualBalance(double price)
+        public void ReduceBalance(double price)
         {
             Balance -= price;
             Spent += price;
