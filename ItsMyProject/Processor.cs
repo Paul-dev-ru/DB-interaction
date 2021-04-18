@@ -12,15 +12,13 @@ namespace ItsMyProject
         public string THREAD { get; set; }
         public int P_GHZ { get; set; }
         public string SOCKET { get; set; }
-        public void VideoCards(string manufacturer, string name, string core, string thread, string socket, int p_ghz, double price)
+
+        public Processor(string manufacturer, string name, string core, string thread, string socket, int p_ghz, double price):base(manufacturer, name, price)
         {
-            Manufacturer = manufacturer;
-            Name = name;
             CORE = core;
             THREAD = thread;
             SOCKET = socket;
             P_GHZ = p_ghz;
-            Price = price;
         }
     }
 }

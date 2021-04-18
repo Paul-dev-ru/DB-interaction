@@ -9,23 +9,20 @@ namespace ItsMyProject
 {
     class VideoCard : Product
     {
-        public string V_MEMORY { get; set; } //кол-во памяти видеокарты
-        public string V_GHZ { get; set; }
-        public string MEMORY_BUS { get; set; } //разрядность
-        public string TYPE_MEMORY { get; set; }
+        //public string V_MEMORY { get; set; } //кол-во памяти видеокарты
+        //public string V_GHZ { get; set; }
+        //public string MEMORY_BUS { get; set; } //разрядность
+        //public string TYPE_MEMORY { get; set; }
 
-        public TextBox Textbox { get; set; }
+        public string DESCRIPTION { get; set; }
 
-        public VideoCard(string manufacturer, string name, string v_memory, string type_memory, string v_ghz, string memory_bus, double price)//, TextBox textbox)
+        public VideoCard(string manufacturer, string name, string description, double price) : base(manufacturer, name, price)
         {
-            Manufacturer = manufacturer;
-            Name = name;
-            V_MEMORY = v_memory;
-            TYPE_MEMORY = type_memory;
-            V_GHZ = v_ghz;
-            MEMORY_BUS = memory_bus;
-            Price = price;
-            //Textbox = textbox;
+            DESCRIPTION = description;
+        }
+        public VideoCard()
+        {
+
         }
         //public override void ToConsole()
         //{

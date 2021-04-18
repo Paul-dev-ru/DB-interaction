@@ -13,26 +13,17 @@ namespace ItsMyProject
 {
     public partial class Form1 : Form
     {
-        readonly Customer customers = new Customer(
+
+        private Customer customers = new Customer(
             "Алексей",
             500000,
             0);
-        readonly VideoCard videoCard = new VideoCard(
+        private VideoCard videoCard = new VideoCard(
             "Nvidia",
             "RTX 3090",
-            "24Gb",
-            "GLPDDR6X",
-            "3600ghz",
-            "256bit",
+            "4Gb,GLPDDR6X, 3600ghz, 256bit", 
             146990);
-        readonly VideoCard videoCard1 = new VideoCard(
-            "AMD",
-            "RX 6600XT",
-            "16Gb",
-            "GLPDDR6X",
-            "3800ghz",
-            "256bit",
-            169990);
+        private VideoCard videoCard1 = new VideoCard();
 
         //readonly RAM rAM = new RAM(
         //    "HyperX",
@@ -43,7 +34,7 @@ namespace ItsMyProject
         //    4500
         //    );
 
-            
+
         public Form1()
         {
             InitializeComponent();
@@ -64,10 +55,6 @@ namespace ItsMyProject
             button2.Visible = false;
             label1.Text = $"Здравствуйте, {customers.Name}!\n Запустите приложение, чтобы начать покупать!\n";
 
-
-
-
-
         }
 
         private void button1_Click_1(object sender, EventArgs e)
@@ -76,16 +63,13 @@ namespace ItsMyProject
             button1.Visible = false;
             label1.Text = $"Здравствуйте, {customers.Name}!\n Ваш баланс: {customers.Balance}\n Ваши затраты: {customers.Spent}";
 
-            
-            
-            dataGridView1.ColumnCount = 7;
+
+
+            dataGridView1.ColumnCount = 4;
             dataGridView1.Columns[0].Name = "Производитель";
             dataGridView1.Columns[1].Name = "Название";
-            dataGridView1.Columns[2].Name = "Кол-во видеопамяти";
-            dataGridView1.Columns[3].Name = "Тип памяти";
-            dataGridView1.Columns[4].Name = "Частота работы GPU";
-            dataGridView1.Columns[5].Name = "Разрядность шины";
-            dataGridView1.Columns[6].Name = "Цена";
+            dataGridView1.Columns[2].Name = "Описание";
+            dataGridView1.Columns[3].Name = "Цена";
 
             dataGridView2.ColumnCount = 4;
             dataGridView2.Columns[0].Name = "Производитель";
@@ -94,13 +78,15 @@ namespace ItsMyProject
             dataGridView2.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             dataGridView2.Columns[3].Name = "Цена";
 
-            dataGridView1.Rows.Add(videoCard.Manufacturer,videoCard.Name, videoCard.V_MEMORY, videoCard.TYPE_MEMORY, videoCard.V_GHZ, videoCard.MEMORY_BUS, videoCard.Price);
-            dataGridView1.Rows.Add(videoCard1.Manufacturer, videoCard1.Name, videoCard1.V_MEMORY, videoCard1.TYPE_MEMORY, videoCard1.V_GHZ, videoCard1.MEMORY_BUS, videoCard1.Price);
+
+            dataGridView1.Rows.Add(videoCard.Manufacturer,videoCard.Name, videoCard.DESCRIPTION, videoCard.Price);
+            //dataGridView1.Rows.Add(videoCard2.Manufacturer, videoCard2.Name, videoCard2.DESCRIPTION, videoCard2.Price);
+            //dataGridView1.Rows.Add(videoCard1.Manufacturer, videoCard1.Name, videoCard1.MEMORY_BUS, videoCard1.Price);
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            string[] value = new string[7];
+            string[] value = new string[4];
             int i = 0;
             foreach (DataGridViewRow row in dataGridView1.SelectedRows)
             {
@@ -112,23 +98,31 @@ namespace ItsMyProject
                 }
             }
 
-            string description = value[2] + "; " + value[3] + "; " + value[4] + "; " + value[5] + ";";
+            //string description = value[2] + ";";
             MessageBox.Show("Товар добавлен в корзину");
 
 
-            dataGridView2.Rows.Add(value[0],value[1], description, value[6]);
+            dataGridView2.Rows.Add(value[0],value[1], value[2], value[3]);
 
-
+            videoCard1.Manufacturer = value[0];
+            videoCard1.Name = value[1];
+            videoCard1.DESCRIPTION = value[2];
+            videoCard1.Price = double.Parse(value[3]);
+            //VideoCard videoCard1 = new VideoCard(
+            //    value[0],
+            //    value[1],
+            //    description,
+            //    double.Parse(value[6]));
+  
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
+
             Product[] products = new Product[]
             {
-                videoCard,
                 videoCard1
             };
-
 
 
             Orders orders = new Orders();
@@ -143,7 +137,7 @@ namespace ItsMyProject
                 }
             }
 
-            MessageBox.Show(dataGridView2.Rows.Count.ToString());
+            //MessageBox.Show(dataGridView2.Rows.Count.ToString());
 
             for (int i = 0; i < dataGridView2.Rows.Count; i++) //для проверки работоспособности
             {

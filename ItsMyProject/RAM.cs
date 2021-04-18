@@ -12,14 +12,13 @@ namespace ItsMyProject
         public int R_GHZ { get; set; }
         public string TYPE_MEMORY { get; set; }
 
-        public RAM(string manufacturer, string name, int r_memory, string type_memory, int r_ghz, double price)
+        public RAM(string manufacturer, string name, double price,int r_memory, string type_memory, int r_ghz):base(manufacturer, name, price)
         {
-            Manufacturer = manufacturer;
-            Name = name;
+           
             R_MEMORY = r_memory;
             TYPE_MEMORY = type_memory;
             R_GHZ = r_ghz;
-            Price = price;
+
         }
     }
 }

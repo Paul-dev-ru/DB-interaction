@@ -4,16 +4,28 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace ItsMyProject
 {
     class Product
     {
 
-        public int counter=0;
+        public int counter = 0;
         public double Price { get; set; }
         public string Name { get; set; }
         public string Manufacturer { get; set; }
 
+
+        public Product(string manufacturer, string name, double price)
+        {
+            Manufacturer = manufacturer;
+            Name = name;
+            Price = price;
+        }
+        public Product()
+        {
+            //data
+        }
         public double GetDiscountPrice(Customer customer)
         {
             if (customer.Spent>30000 && customer.Spent<50000)
